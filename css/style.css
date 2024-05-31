@@ -4,3 +4,17 @@
     box-sizing: border-box;
 }
 
+div.sfondo{
+    display: flex;
+    flex-direction: column;
+}
+
+div.green{
+    background-color: #009688;
+    height: 150px;
+}
+
+div.grey{
+    background-color: #dbdbd1;
+    height: calc(100vh - 150px);
+}
