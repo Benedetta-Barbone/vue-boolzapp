@@ -40,8 +40,19 @@
                     <span><i class="fa-solid fa-magnifying-glass font-i-grey"></i></span>
                     <input type="text" placeholder="cerca o inizia una nuova chat">
                 </section>
-            </section>
 
+                <section class="chat-utente" v-for="item in contacts" >
+                    <div>
+                        <img :src="item.avatar" alt="">
+                        <ul>
+                            <li> {{ item.name }}</li>
+                            <li class="font-i-grey">Ultimo messaggio inviato</li>
+                        </ul>
+                    </div>
+                    <p class="font-i-grey">12:00</p>
+                </section>
+
+            </section>
             <section class="chat">
      
             </section>

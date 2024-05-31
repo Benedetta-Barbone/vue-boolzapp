@@ -72,6 +72,20 @@ section.barra-ricerca>input{
     padding: 0.4rem 0;
 }
 
+section.chat-utente{
+    display: flex;
+    justify-content: space-between;
+}
+
+section.chat-utente>div{
+    display: flex;
+    align-items: center;
+}
+
+section.chat-utente>p{
+    padding-top: 8px;
+}
+
 
 
 
