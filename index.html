@@ -13,49 +13,68 @@
 <body>
     <div id="app">
         <div class="container">
-            <section class="contatti">
-                 <header>
-                     <div>
-                         <img src="./img/avatar_io.jpg" alt="BB">
-                         <p>Benedetta</p>
-                     </div>
-                     <div>
-                         <ul>
-                             <li><i class="fa-solid fa-circle-notch font-i-grey"></i></li>
-                             <li><i class="fa-solid fa-message font-i-grey"></i></li>
-                             <li><i class="fa-solid fa-ellipsis-vertical font-i-grey"></i></li>
-                         </ul>
-                     </div>
-                 </header>
-                 <section class="notifiche">
-                    <span>
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </span>
-                    <ul>
-                        <li class="bold">Ricevi notifiche di nuovi messaggi</li>
-                        <li class="sottolineato">Attiva notifiche desktop</li>
-                    </ul>
-                </section>
-                <section class="barra-ricerca">
-                    <span><i class="fa-solid fa-magnifying-glass font-i-grey"></i></span>
-                    <input type="text" placeholder="cerca o inizia una nuova chat">
-                </section>
-
-                <section class="chat-utente" v-for="item in contacts" >
-                    <div>
-                        <img :src="item.avatar" alt="">
+            <header>                
+                <section class="contatti">
+                     <header>
+                         <div>
+                             <img src="./img/avatar_io.jpg" alt="BB">
+                             <p>Benedetta</p>
+                         </div>
+                         <div>
+                             <ul>
+                                 <li><i class="fa-solid fa-circle-notch font-i-grey"></i></li>
+                                 <li><i class="fa-solid fa-message font-i-grey"></i></li>
+                                 <li><i class="fa-solid fa-ellipsis-vertical font-i-grey"></i></li>
+                             </ul>
+                         </div>
+                     </header>
+                     <section class="notifiche">
+                        <span>
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </span>
                         <ul>
-                            <li> {{ item.name }}</li>
-                            <li class="font-i-grey">Ultimo messaggio inviato</li>
+                            <li class="bold">Ricevi notifiche di nuovi messaggi</li>
+                            <li class="sottolineato">Attiva notifiche desktop</li>
                         </ul>
-                    </div>
-                    <p class="font-i-grey">12:00</p>
+                    </section>
+                    <section class="barra-ricerca">
+                        <span><i class="fa-solid fa-magnifying-glass font-i-grey"></i></span>
+                        <input type="text" placeholder="cerca o inizia una nuova chat">
+                    </section>
+                    <section class="chat-utente" v-for="item in contacts" >
+                        <div>
+                            <img :src="item.avatar" alt="">
+                            <ul>
+                                <li> {{ item.name }}</li>
+                                <li class="font-i-grey">Ultimo messaggio inviato</li>
+                            </ul>
+                        </div>
+                        <p class="font-i-grey">12:00</p>
+                    </section>
                 </section>
-
-            </section>
-            <section class="chat">
-     
-            </section>
+            </header>
+            <main>
+                <section class="nome-contatto">                   
+                        <div>
+                            <img src="" alt="">
+                            <p>nome</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><i class="fa-solid fa-magnifying-glass font-i-grey"></i></li>
+                                <li><i class="fa-solid fa-paperclip font-i-grey"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical font-i-grey"></i></li>
+                            </ul>
+                        </div>                    
+                </section>
+                <section class="conversazione">
+                    
+                </section>
+                <section class="invia-messaggio">
+                    
+                </section>
+                
+            </main>
 
         </div>
 

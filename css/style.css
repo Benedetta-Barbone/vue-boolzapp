@@ -13,11 +13,12 @@ div.container{
     width: 75%;
     margin: 0 auto;
     display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 section.contatti>header{
     display: flex;
-    margin-top: 1rem;
     background-color: #eaeaea;
     width: 400px;
     justify-content: space-between;
@@ -75,6 +76,7 @@ section.barra-ricerca>input{
 section.chat-utente{
     display: flex;
     justify-content: space-between;
+    padding: 0 0.4rem;
 }
 
 section.chat-utente>div{
@@ -86,6 +88,38 @@ section.chat-utente>p{
     padding-top: 8px;
 }
 
+main{
+    width: 100%;
+}
+
+section.nome-contatto>div{
+    display: flex;
+}
+
+.nome-contatto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eaeaea;
+    height: 60px;
+    border-left: 1px solid rgb(192, 186, 186);
+}
+
+.nome-contatto>div>ul{
+    display: flex;
+}
+
+section.conversazione{
+    background-image: url(../img/mine.jpg);
+    height: 550px;
+}
+
+section.invia-messaggio{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #f3eeea;
+}
 
 
 
