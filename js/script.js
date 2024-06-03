@@ -164,13 +164,16 @@ createApp({
                         status: 'received'
                     }
                 ],
+                currentContact: null,
+                newMessage: ''
             }
         ]
-        
-  }
-  
-}
-  
+    };
+    
+},
+created() {
+    this.currentContact = this.contacts[0];
+  },
 }).mount('#app')
 
 

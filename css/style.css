@@ -105,6 +105,11 @@ section.nome-contatto>div{
     border-left: 1px solid rgb(192, 186, 186);
 }
 
+.nome-contatto>div{
+    display: flex;
+    align-items: center;
+}
+
 .nome-contatto>div>ul{
     display: flex;
 }
@@ -112,6 +117,8 @@ section.nome-contatto>div{
 section.conversazione{
     background-image: url(../img/mine.jpg);
     height: 550px;
+    display: flex;
+    flex-direction: column;
 }
 
 section.invia-messaggio{
@@ -119,6 +126,25 @@ section.invia-messaggio{
     justify-content: space-between;
     height: 50px;
     background-color: #f3eeea;
+}
+
+section.conversazione>.messaggi-inviati, .messaggi-ricevuti{
+    display: flex;
+    padding: 0.3rem 0.5rem;
+    margin: 0.4rem 1rem;
+    max-width: 375px;
+    border-radius: 25px;
+}
+
+.messaggi-inviati{    
+    align-self: end;
+    background-color: #d5f9ba;
+    margin-left: 100px;
+}
+
+.messaggi-ricevuti{
+    align-self: start;
+    background-color: #ffffff;
 }
 
 

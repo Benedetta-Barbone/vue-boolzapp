@@ -54,26 +54,29 @@
                 </section>
             </header>
             <main>
-                <section class="nome-contatto">                   
-                        <div>
-                            <img src="" alt="">
-                            <p>nome</p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li><i class="fa-solid fa-magnifying-glass font-i-grey"></i></li>
-                                <li><i class="fa-solid fa-paperclip font-i-grey"></i></li>
-                                <li><i class="fa-solid fa-ellipsis-vertical font-i-grey"></i></li>
-                            </ul>
-                        </div>                    
-                </section>
-                <section class="conversazione">
-                    
-                </section>
-                <section class="invia-messaggio">
-                    
-                </section>
-                
+                <div class="chat">
+                    <section class="nome-contatto">
+                      <div>
+                        <img :src="currentContact.avatar" alt="">
+                        <p>{{ currentContact.name }}</p>
+                      </div>
+                      <div>
+                        <ul>
+                          <li><i class="fa-solid fa-magnifying-glass font-i-grey"></i></li>
+                          <li><i class="fa-solid fa-paperclip font-i-grey"></i></li>
+                          <li><i class="fa-solid fa-ellipsis-vertical font-i-grey"></i></li>
+                        </ul>
+                      </div>
+                    </section>
+                    <section class="conversazione">
+                      <div v-for="(message, index) in currentContact.messages" :key="index" :class="[ message.status === 'sent' ? 'messaggi-inviati' : 'messaggi-ricevuti']">
+                        <div class="message-content">{{ message.message }}</div>
+                      </div>
+                    </section>
+                    <section class="invia-messaggio">
+                     
+                    </section>
+                  </div>
             </main>
 
         </div>
