@@ -163,17 +163,25 @@ createApp({
                         message: 'OK!!',
                         status: 'received'
                     }
-                ],
-                currentContact: null,
-                newMessage: ''
+                ]
             }
-        ]
-    };
-    
+        ],
+            currentContactIndex: 0,
+            newMessage: '',
+        };
+        
+    },
+computed: {
+    currentContact() {
+        return this.contacts[this.currentContactIndex];
+    }
 },
-created() {
-    this.currentContact = this.contacts[0];
-  },
+methods: {
+    selectContact(index) {
+        this.currentContactIndex = index;
+    },
+},
+  
 }).mount('#app')
 
 

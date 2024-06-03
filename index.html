@@ -41,24 +41,26 @@
                         <span><i class="fa-solid fa-magnifying-glass font-i-grey"></i></span>
                         <input type="text" placeholder="cerca o inizia una nuova chat">
                     </section>
-                    <section class="chat-utente" v-for="item in contacts" >
-                        <div>
-                            <img :src="item.avatar" alt="">
-                            <ul>
-                                <li> {{ item.name }}</li>
-                                <li class="font-i-grey">Ultimo messaggio inviato</li>
-                            </ul>
+                    <section class="chat-utente" >
+                        <div class="lista-contatti">
+                            <div v-for="(contact, index) in contacts" :key="index"  @click="selectContact(index)"  :class="[{ active: index === currentContactIndex }]">
+                                <img :src="contact.avatar" alt="">
+                                <ul>
+                                    <li> {{ contact.name }}</li>
+                                    <li class="font-i-grey">Ultimo messaggio inviato</li>
+                                </ul>
+                            </div>
                         </div>
                         <p class="font-i-grey">12:00</p>
                     </section>
                 </section>
             </header>
             <main>
-                <div class="chat">
+                <div class="chat" v-if="currentContact">
                     <section class="nome-contatto">
-                      <div>
-                        <img :src="currentContact.avatar" alt="">
-                        <p>{{ currentContact.name }}</p>
+                        <div>
+                            <img :src="currentContact.avatar" alt="">
+                            <p>{{ currentContact.name }}</p>
                       </div>
                       <div>
                         <ul>
@@ -69,9 +71,10 @@
                       </div>
                     </section>
                     <section class="conversazione">
-                      <div v-for="(message, index) in currentContact.messages" :key="index" :class="[ message.status === 'sent' ? 'messaggi-inviati' : 'messaggi-ricevuti']">
-                        <div class="message-content">{{ message.message }}</div>
-                      </div>
+                        <div v-for="(message, index) in currentContact.messages" :key="index" :class="[message.status === 'sent' ? 'messaggi-inviati' : 'messaggi-ricevuti']">
+                            <div class="message-content">{{ message.message }}</div>
+                           </div>
+                        </div>
                     </section>
                     <section class="invia-messaggio">
                      

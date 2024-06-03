@@ -79,14 +79,18 @@ section.chat-utente{
     padding: 0 0.4rem;
 }
 
-section.chat-utente>div{
+div.lista-contatti>div{
     display: flex;
     align-items: center;
 }
 
-section.chat-utente>p{
+div.lista-contatti>p{
     padding-top: 8px;
 }
+
+.contact-item.active {
+    background-color: #eee;
+  }
 
 main{
     width: 100%;
