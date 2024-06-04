@@ -181,23 +181,19 @@ createApp({
             this.currentContactIndex = index;
         },
         inviaMessaggio(){
-            if(this.newMessage.trim() !== ''){
-                const nuovoContenutoMessaggio = {
-                    messagge: this.newMessage,
-                    status: 'sent'
-                };
-                this.currentContact.messages.push(nuovoContenutoMessaggio);
+            if(this.newMessage.trim() !== '' && this.currentContact){                
+                this.currentContact.messages.push({message: this.newMessage, status: 'sent'});
                 this.newMessage = '';
                 this.riceviMessaggio();
             }
         },
         riceviMessaggio(){
             setTimeout(() => {
-                const nuovoContenutoMessaggio = {
+                const nuovoMessaggioRicevuto = {
                     message: 'ok',
                     status: 'received'
                 };
-                this.currentContact.messages.push(nuovoContenutoMessaggio);
+                this.currentContact.messages.push(nuovoMessaggioRicevuto);
             }, 1000);
         }
     }
