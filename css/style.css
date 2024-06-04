@@ -88,10 +88,6 @@ div.lista-contatti>p{
     padding-top: 8px;
 }
 
-.contact-item.active {
-    background-color: #eee;
-  }
-
 main{
     width: 100%;
 }

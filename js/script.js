@@ -171,16 +171,36 @@ createApp({
         };
         
     },
-computed: {
-    currentContact() {
-        return this.contacts[this.currentContactIndex];
-    }
-},
-methods: {
-    selectContact(index) {
-        this.currentContactIndex = index;
+    computed: {
+        currentContact() {
+            return this.contacts[this.currentContactIndex];
+        }
     },
-},
+    methods: {
+        selectContact(index) {
+            this.currentContactIndex = index;
+        },
+        inviaMessaggio(){
+            if(this.newMessage.trim() !== ''){
+                const nuovoContenutoMessaggio = {
+                    messagge: this.newMessage,
+                    status: 'sent'
+                };
+                this.currentContact.messages.push(nuovoContenutoMessaggio);
+                this.newMessage = '';
+                this.riceviMessaggio();
+            }
+        },
+        riceviMessaggio(){
+            setTimeout(() => {
+                const nuovoContenutoMessaggio = {
+                    message: 'ok',
+                    status: 'received'
+                };
+                this.currentContact.messages.push(nuovoContenutoMessaggio);
+            }, 1000);
+        }
+    }
   
 }).mount('#app')
 
