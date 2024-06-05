@@ -123,9 +123,10 @@ section.conversazione{
 
 section.invia-messaggio{
     display: flex;
-    justify-content: space-between;
     height: 50px;
     background-color: #f3eeea;
+    justify-content: space-around;
+    align-items: center;
 }
 
 section.conversazione>.messaggi-inviati, .messaggi-ricevuti{
@@ -145,6 +146,14 @@ section.conversazione>.messaggi-inviati, .messaggi-ricevuti{
 .messaggi-ricevuti{
     align-self: start;
     background-color: #ffffff;
+}
+
+section.invia-messaggio>input{
+    border: none;
+    padding: 0.4rem 1rem;
+    background-color: white;
+    width: 450px;
+    border-radius: 6px;
 }
 
 

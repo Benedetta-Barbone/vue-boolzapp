@@ -39,11 +39,11 @@
                     </section>
                     <section class="barra-ricerca">
                         <span><i class="fa-solid fa-magnifying-glass font-i-grey"></i></span>
-                        <input type="text" placeholder="cerca o inizia una nuova chat">
+                        <input type="text" placeholder="cerca o inizia una nuova chat" v-model="searchTerm">
                     </section>
                     <section class="chat-utente" >
                         <div class="lista-contatti">
-                            <div v-for="(contact, index) in contacts" :key="index"  @click="selectContact(index)"  :class="[{ active: index === currentContactIndex }]">
+                            <div v-for="(contact, index) in filteredContacts" :key="index"  @click="selectContact(index)"  :class="[{ active: index === currentContactIndex }]">
                                 <img :src="contact.avatar" alt="">
                                 <ul>
                                     <li> {{ contact.name }}</li>
@@ -77,7 +77,9 @@
                         </div>
                     </section>
                     <section class="invia-messaggio">
+                        <i class="fa-regular fa-face-smile font-i-grey"></i>
                         <input  v-model="newMessage" @keyup.enter="inviaMessaggio" type="text" placeholder="Scrivi un messaggio" >
+                        <i class="fa-solid fa-microphone font-i-grey"></i>
                     </section>
                   </div>
             </main>
